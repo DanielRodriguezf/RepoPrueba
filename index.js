@@ -1,0 +1,9 @@
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const router = jsonServer.router("registros2.json");
+const middlewares = jsonServer.defaults();
+const port = process.env.PORT || 1000; //web service
+
+server.use(middlewares);
+server.use(router);
+server.listen(port);
